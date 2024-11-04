@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judah's Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0c0c0c;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            position: relative;
+            animation: text-glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes text-glow {
+            from {
+                text-shadow: 0 0 10px #33ccff, 0 0 20px #33ccff, 0 0 30px #33ccff, 0 0 40px #33ccff, 0 0 50px #33ccff, 0 0 60px #33ccff, 0 0 70px #33ccff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff3399, 0 0 30px #ff3399, 0 0 40px #ff3399, 0 0 50px #ff3399, 0 0 60px #ff3399, 0 0 70px #ff3399, 0 0 80px #ff3399;
+            }
+        }
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: particle-fall 10s linear infinite;
+        }
+        @keyframes particle-fall {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Judah was here</h1>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
